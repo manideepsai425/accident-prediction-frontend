@@ -11,8 +11,8 @@ body,
 
 body {
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  background-color: #f7faf8;
-  color: #0f172a;
+  background-color: #f6f1e4;
+  color: #12271e;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -21,7 +21,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: inherit;
-  background: #eef2f0;
+  background: #e9e3d2;
 }
 
 /* Keep Leaflet's own popup chrome close to the app's rounded, soft-shadow language
