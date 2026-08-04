@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  color: #12271e;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* A very soft warm gradient instead of a flat fill -- adds a touch of
+     depth to the canvas itself without ever competing with content. */
+  background-color: #f6f1e4;
+  background-image: radial-gradient(circle at 12% 0%, rgba(20, 92, 65, 0.05), transparent 45%),
+    radial-gradient(circle at 100% 18%, rgba(217, 119, 6, 0.05), transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Mobile Safari/Chrome show a gray flash on every tap by default; our own
+   active: press states (scale/shadow) replace it, so switch it off here. */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* A clean, consistent keyboard-focus ring app-wide, matching the brand
+   color instead of each browser's default (usually blue). */
+:focus-visible {
+  outline: 2px solid #16a34a;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Leaflet needs an explicit height on its container or it collapses to 0px. */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  font-family: inherit;
+  background: #e9e3d2;
+}
+
+/* Keep Leaflet's own popup chrome close to the app's rounded, soft-shadow language
+   instead of its blocky default look. */
+.leaflet-popup-content-wrapper {
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(18, 39, 30, 0.14);
+}
+.leaflet-popup-content {
+  margin: 12px 14px;
+  font-family: inherit;
+}
+
+/* Thin, calm scrollbars for the results panel -- avoids the default chunky
+   browser scrollbar fighting the rest of the polish. */
+.thin-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background-color: #d9f2e3;
+  border-radius: 999px;
+}
+.thin-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* A gentle shimmer for skeleton loading states. */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+.skeleton {
+  background: linear-gradient(90deg, #ede7d8 25%, #f6f1e4 37%, #ede7d8 63%);
+  background-size: 800px 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+    }
+  
